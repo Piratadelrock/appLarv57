@@ -18,6 +18,9 @@
                 @foreach ($expenseReports as $expenseReport)
                     <tr>
                         <td>{{$expenseReport->title}}</td>
+                        <td>
+                            <a class="btn btn-success" href="expenseReports/{{$expenseReport->id}}/edit">Edit</a>
+                        </td>
                     </tr>
                 @endforeach
             </table>
