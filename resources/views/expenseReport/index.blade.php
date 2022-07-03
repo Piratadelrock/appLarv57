@@ -4,14 +4,28 @@
     <div class="row">
         <div class="col">
             <h1>Reports</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary" href="/expenseReports/create">Create a new report</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
             <table class="table">
                 @foreach ($expenseReports as $expenseReport)
                     <tr>
-                        {{-- title es la columna que llamamos de la tabla --}}
                         <td>{{$expenseReport->title}}</td>
                     </tr>
                 @endforeach
             </table>
+        </div>
+    </div>
+
+
+       
         </div>
     </div>
 </div>
