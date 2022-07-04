@@ -14,6 +14,9 @@
 
         <div class="row">
             <div class="col">
+                @if($error->any())
+                    <div class="alert alert-danger">no information has been added</div>
+                @endif       
                 <form action="/expenseReports" method="POST">
                     @csrf
                     <div class="form-group">

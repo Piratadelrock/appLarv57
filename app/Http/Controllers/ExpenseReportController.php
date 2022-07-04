@@ -37,6 +37,10 @@ class ExpenseReportController extends Controller
      */
     public function store(Request $request)
     {
+        // valores correctos o no, filtrados
+        $valideData = $request->validate([
+            'title'=>'required'
+        ]);
         $report = new ExpenseReport();
         $report-> title = $request->get('title');
         $report-> save();
