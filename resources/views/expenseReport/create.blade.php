@@ -14,9 +14,15 @@
 
         <div class="row">
             <div class="col">
-                @if($error->any())
-                    <div class="alert alert-danger">no information has been added</div>
-                @endif       
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="/expenseReports" method="POST">
                     @csrf
                     <div class="form-group">

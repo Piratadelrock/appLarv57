@@ -39,8 +39,9 @@ class ExpenseReportController extends Controller
     {
         // valores correctos o no, filtrados
         $valideData = $request->validate([
-            'title'=>'required'
+            'title'=>'required|min:3'
         ]);
+        // dd($valideData);
         $report = new ExpenseReport();
         $report-> title = $request->get('title');
         $report-> save();
