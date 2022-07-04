@@ -93,11 +93,16 @@ class ExpenseReportController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
     
     public function confirmDelete($id)
     {
-        //
+        // dd('CONFIRM DELETE '. $id);
+        $report = ExpenseReport::find($id);
+
+        return view('expenseReport.confirmDelete', [
+            'report' => $report
+        ]);
     }
 }

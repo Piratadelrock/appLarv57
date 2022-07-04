@@ -30,4 +30,4 @@ Route::get('/dashboard','DashboardController@index');
 Route::resource('/expenseReports', 'ExpenseReportController');
 
 
-Route::get('/expenseReports/{id}/confirmDelete','ExpenseReportController@confirmDelete');
+Route::get('expenseReports/{id}/confirmDelete','ExpenseReportController@confirmDelete');
