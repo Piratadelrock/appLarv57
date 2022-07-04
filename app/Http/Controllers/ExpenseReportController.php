@@ -85,17 +85,6 @@ class ExpenseReportController extends Controller
         return redirect('expenseReports');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        
-    }
-    
     public function confirmDelete($id)
     {
         // dd('CONFIRM DELETE '. $id);
@@ -105,4 +94,19 @@ class ExpenseReportController extends Controller
             'report' => $report
         ]);
     }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $report = ExpenseReport::find($id);
+        $report-> delete();
+        
+        return redirect('expenseReports');
+    }
+    
+
 }
