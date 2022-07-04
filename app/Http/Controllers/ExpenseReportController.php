@@ -64,7 +64,7 @@ class ExpenseReportController extends Controller
     public function edit($id)
     {
         //id representado que viene desde la ruta,
-        $report = ExpenseReport::find($id);
+        $report = ExpenseReport::findOrFail($id);
         return view('expenseReport.edit',['report'=>$report]);
     }
 
