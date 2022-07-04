@@ -21,6 +21,9 @@
                         <td>
                             <a class="btn btn-success" href="expenseReports/{{$expenseReport->id}}/edit">Edit</a>
                         </td>
+                        <td>
+                            <a class="btn btn-danger" href="expenseReports/{{$expenseReport->id}}/confirmDelete">Delete</a>
+                        </td>
                     </tr>
                 @endforeach
             </table>

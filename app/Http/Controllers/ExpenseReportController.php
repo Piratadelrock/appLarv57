@@ -63,7 +63,9 @@ class ExpenseReportController extends Controller
      */
     public function edit($id)
     {
-        //
+        //id representado que viene desde la ruta,
+        $report = ExpenseReport::find($id);
+        return view('expenseReport.edit',['report'=>$report]);
     }
 
     /**
@@ -75,7 +77,12 @@ class ExpenseReportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd('put update');
+        $report = ExpenseReport::find($id);
+        $report ->title = $request->get('title') ;
+        $report-> save();
+        
+        return redirect('expenseReports');
     }
 
     /**
@@ -85,6 +92,11 @@ class ExpenseReportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+    
+    public function confirmDelete($id)
     {
         //
     }
