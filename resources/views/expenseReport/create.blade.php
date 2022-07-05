@@ -27,7 +27,8 @@
                     @csrf
                     <div class="form-group">
                         <label for="title">Title:</label>
-                        <input type="text" class="form-control" name="title" id="title">
+                        <input type="text" class="form-control" name="title" id="title" placeholder="title"
+                            value="{{ old('title') }}" pattern="[A-Za-z]{3,}" title="minimum characters: 3">
                     </div>
                     <button class="btn btn-primary" type="submit">Submit</button>
                 </form>

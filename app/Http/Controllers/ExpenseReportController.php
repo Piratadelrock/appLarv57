@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ExpenseReport;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ExpenseReportController extends Controller
 {
@@ -38,12 +39,12 @@ class ExpenseReportController extends Controller
     public function store(Request $request)
     {
         // valores correctos o no, filtrados
-        $valideData = $request->validate([
+        $validData = $request->validate([
             'title'=>'required|min:3'
         ]);
         // dd($valideData);
         $report = new ExpenseReport();
-        $report-> title = $request->get('title');
+        $report-> title = $validData['title'];
         $report-> save();
 
         return redirect('expenseReports');
@@ -52,12 +53,13 @@ class ExpenseReportController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  ExpenseReport $expenseReport
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ExpenseReport $expenseReport)
     {
-        //
+        return view('expenseReport.show',['report'=>$expenseReport]);
+
     }
 
     /**
